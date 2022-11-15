@@ -11,6 +11,7 @@
 		AF4F860829237F1700FE090B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F860729237F1700FE090B /* ContentView.swift */; };
 		AF4F860A29237F1F00FE090B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4F860929237F1F00FE090B /* Assets.xcassets */; };
 		AF4F860D29237F1F00FE090B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4F860C29237F1F00FE090B /* Preview Assets.xcassets */; };
+		AFE8842129239A2200D2162D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE8842029239A2200D2162D /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		AF4F860729237F1700FE090B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AF4F860929237F1F00FE090B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF4F860C29237F1F00FE090B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AFE8842029239A2200D2162D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				AF4F860529237F1700FE090B /* SwiftyProteinApp.swift */,
 				AF4F860729237F1700FE090B /* ContentView.swift */,
+				AFE8842029239A2200D2162D /* Launch Screen.storyboard */,
 				AF4F860929237F1F00FE090B /* Assets.xcassets */,
 				AF4F860B29237F1F00FE090B /* Preview Content */,
 			);
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE8842129239A2200D2162D /* Launch Screen.storyboard in Resources */,
 				AF4F860D29237F1F00FE090B /* Preview Assets.xcassets in Resources */,
 				AF4F860A29237F1F00FE090B /* Assets.xcassets in Resources */,
 			);
