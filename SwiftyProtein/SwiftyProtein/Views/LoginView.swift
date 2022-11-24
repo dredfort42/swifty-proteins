@@ -31,8 +31,9 @@ struct LoginView_Previews: PreviewProvider {
 //MARK: - Button view
 
 struct AuthenticationButton: View {
-	@State var buttonTapped = false
-	@State var buttonPressed = false
+	@State private var buttonTapped = false
+	@State private var buttonPressed = false
+	@State private var buttonRotating = 0.0
 
 	var body: some View {
 		ZStack {
@@ -46,21 +47,31 @@ struct AuthenticationButton: View {
 				Circle()
 					.fill(Color(white: 0.95))
 					.frame(width: 120, height: 120)
-					.shadow(color: Color(.sRGBLinear, red: 1.0, green: 0.0, blue: 0.0, opacity: 0.2), radius: 2, x: -2, y: 3)
-					.shadow(color: Color(.sRGBLinear, red: 0.0, green: 1.0, blue: 0.0, opacity: 0.2), radius: 2, x: -2, y: -3)
-					.shadow(color: Color(.sRGBLinear, red: 0.0, green: 0.0, blue: 1.0, opacity: 0.2), radius: 2, x: 2, y: 3)
+					.shadow(color: .cyan.opacity(0.1), radius: 1, x: 0, y: -10)
+					.shadow(color: .yellow.opacity(0.1), radius: 1, x: 0, y: 10)
+					.shadow(color: .purple.opacity(0.1), radius: 1, x: 10, y: 0)
+					.shadow(color: .green.opacity(0.1), radius: 1, x: -10, y: 0)
+					.rotationEffect(.degrees(buttonRotating))
+					.onAppear {
+						withAnimation(.linear(duration: 1)
+							.speed(0.1).repeatForever(autoreverses: false)) {
+								buttonRotating = 360.0
+							}
+					}
 				Circle()
 					.fill(.white)
 					.frame(width: 118, height: 118)
 			}
+
 		)
 		.scaleEffect(buttonTapped ? 0.95 : 1)
+
 		.onTapGesture() {
-			authentication()
 			buttonTapped.toggle()
 			DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
 				buttonTapped = false
 			}
+			authentication()
 		}
 	}
 
