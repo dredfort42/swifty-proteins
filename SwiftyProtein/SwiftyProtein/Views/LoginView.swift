@@ -10,9 +10,7 @@ import SwiftUI
 struct LoginView: View {
 	var body: some View {
 		VStack {
-			Spacer()
 			AuthenticationButton()
-			Spacer()
 		}
 		.background(
 			Image("Background")
@@ -40,16 +38,20 @@ struct AuthenticationButton: View {
 		ZStack {
 			Image(systemName: "faceid")
 				.font(.system(size: 64, weight: .thin))
+				.foregroundColor(Color(white: 0.2))
 		}
 		.frame(width: 100, height: 100)
 		.background(
 			ZStack {
 				Circle()
-					.fill(.white)
+					.fill(Color(white: 0.95))
 					.frame(width: 120, height: 120)
 					.shadow(color: Color(.sRGBLinear, red: 1.0, green: 0.0, blue: 0.0, opacity: 0.2), radius: 2, x: -2, y: 3)
 					.shadow(color: Color(.sRGBLinear, red: 0.0, green: 1.0, blue: 0.0, opacity: 0.2), radius: 2, x: -2, y: -3)
 					.shadow(color: Color(.sRGBLinear, red: 0.0, green: 0.0, blue: 1.0, opacity: 0.2), radius: 2, x: 2, y: 3)
+				Circle()
+					.fill(.white)
+					.frame(width: 118, height: 118)
 			}
 		)
 		.scaleEffect(buttonTapped ? 0.95 : 1)

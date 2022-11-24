@@ -5,11 +5,11 @@
       "scale" : "1x"
     },
     {
-      "filename" : "Invader.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Invader.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
