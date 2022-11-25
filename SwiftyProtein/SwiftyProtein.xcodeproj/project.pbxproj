@@ -12,6 +12,7 @@
 		AF4F860829237F1700FE090B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F860729237F1700FE090B /* LoginView.swift */; };
 		AF4F860A29237F1F00FE090B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4F860929237F1F00FE090B /* Assets.xcassets */; };
 		AF4F860D29237F1F00FE090B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4F860C29237F1F00FE090B /* Preview Assets.xcassets */; };
+		AFC799B2293119F000ACABF7 /* ProteinListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC799B1293119F000ACABF7 /* ProteinListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		AF4F860729237F1700FE090B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AF4F860929237F1F00FE090B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF4F860C29237F1F00FE090B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AFC799B1293119F000ACABF7 /* ProteinListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				AF4F860729237F1700FE090B /* LoginView.swift */,
+				AFC799B1293119F000ACABF7 /* ProteinListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF4F860829237F1700FE090B /* LoginView.swift in Sources */,
+				AFC799B2293119F000ACABF7 /* ProteinListView.swift in Sources */,
 				AF4F860629237F1700FE090B /* SwiftyProteinApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +286,9 @@
 				DEVELOPMENT_TEAM = UJZ22F5K9V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftyProtein/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "\"Let's unlock your data\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -316,7 +322,9 @@
 				DEVELOPMENT_TEAM = UJZ22F5K9V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftyProtein/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "\"Let's unlock your data\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

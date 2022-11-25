@@ -6,19 +6,61 @@
 //
 
 import SwiftUI
+import LocalAuthentication
 
 struct LoginView: View {
+
+	@State private var successAuth = false
+	@State private var buttonTapped = false
+
 	var body: some View {
-		VStack {
+		if successAuth {
+			ProteinListView()
+		} else {
 			AuthenticationButton()
+				.scaleEffect(buttonTapped ? 0.95 : 1)
+				.onTapGesture() {
+					buttonTapped.toggle()
+					DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+						buttonTapped = false
+					}
+					authentication()
+				}
+				.background(
+					Image("Background")
+						.resizable()
+						.aspectRatio(contentMode: .fill)
+						.edgesIgnoringSafeArea(.all)
+						.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+				)
 		}
-		.background(
-			Image("Background")
-				.resizable()
-				.aspectRatio(contentMode: .fill)
-				.edgesIgnoringSafeArea(.all)
-				.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-		)
+	}
+
+	func authentication() {
+
+		let context = LAContext()
+		var error: NSError?
+
+		// check whether biometric authentication is possible
+		if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+			// it's possible, so go ahead and use it
+			let reason = "We need to unlock your data."
+
+			context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
+				// authentication has now completed
+				if success {
+					// authenticated successfully
+					print("SUCCESS")
+					successAuth.toggle()
+				} else {
+					// there was a problem
+					print("FAULSE")
+				}
+			}
+		} else {
+			// no biometrics
+			print("NO BIOMETRICS")
+		}
 	}
 }
 
@@ -31,8 +73,7 @@ struct LoginView_Previews: PreviewProvider {
 //MARK: - Button view
 
 struct AuthenticationButton: View {
-	@State private var buttonTapped = false
-	@State private var buttonPressed = false
+
 	@State private var buttonRotating = 0.0
 
 	var body: some View {
@@ -62,20 +103,6 @@ struct AuthenticationButton: View {
 					.fill(.white)
 					.frame(width: 118, height: 118)
 			}
-
 		)
-		.scaleEffect(buttonTapped ? 0.95 : 1)
-
-		.onTapGesture() {
-			buttonTapped.toggle()
-			DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-				buttonTapped = false
-			}
-			authentication()
-		}
-	}
-
-	func authentication() {
-		print("Button")
 	}
 }
