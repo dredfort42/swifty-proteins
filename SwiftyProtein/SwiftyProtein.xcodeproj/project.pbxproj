@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		AF08C724292F66BF0001D010 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF08C723292F66BF0001D010 /* Launch Screen.storyboard */; };
 		AF22F00F2933B38600FAB542 /* AuthenticationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF22F00E2933B38500FAB542 /* AuthenticationButtonView.swift */; };
+		AF3216D42933E2600061AD9F /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF3216D32933E2600061AD9F /* ligands.txt */; };
+		AF3216D62933E3140061AD9F /* Legand.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3216D52933E3140061AD9F /* Legand.swift */; };
+		AF3216DB2934E11D0061AD9F /* LegandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3216DA2934E11D0061AD9F /* LegandView.swift */; };
 		AF4F860629237F1700FE090B /* SwiftyProteinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F860529237F1700FE090B /* SwiftyProteinApp.swift */; };
 		AF4F860829237F1700FE090B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F860729237F1700FE090B /* LoginView.swift */; };
 		AF4F860A29237F1F00FE090B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4F860929237F1F00FE090B /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* Begin PBXFileReference section */
 		AF08C723292F66BF0001D010 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		AF22F00E2933B38500FAB542 /* AuthenticationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationButtonView.swift; sourceTree = "<group>"; };
+		AF3216D32933E2600061AD9F /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ligands.txt; path = ../../../ligands.txt; sourceTree = "<group>"; };
+		AF3216D52933E3140061AD9F /* Legand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legand.swift; sourceTree = "<group>"; };
+		AF3216DA2934E11D0061AD9F /* LegandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegandView.swift; sourceTree = "<group>"; };
 		AF4F860229237F1700FE090B /* SwiftyProtein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProtein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4F860529237F1700FE090B /* SwiftyProteinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyProteinApp.swift; sourceTree = "<group>"; };
 		AF4F860729237F1700FE090B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -38,6 +44,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF3216D22933E1A90061AD9F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AF3216D32933E2600061AD9F /* ligands.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AF3216D72933E31D0061AD9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AF3216D52933E3140061AD9F /* Legand.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AF3216D82934A9CC0061AD9F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AF4F860729237F1700FE090B /* LoginView.swift */,
+				AF22F00E2933B38500FAB542 /* AuthenticationButtonView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		AF3216D92934A9F20061AD9F /* ProteinList */ = {
+			isa = PBXGroup;
+			children = (
+				AFC799B1293119F000ACABF7 /* ProteinListView.swift */,
+			);
+			path = ProteinList;
+			sourceTree = "<group>";
+		};
+		AF3216DC2934E12A0061AD9F /* Protein */ = {
+			isa = PBXGroup;
+			children = (
+				AF3216DA2934E11D0061AD9F /* LegandView.swift */,
+			);
+			path = Protein;
+			sourceTree = "<group>";
+		};
 		AF4F85F929237F1600FE090B = {
 			isa = PBXGroup;
 			children = (
@@ -57,11 +104,13 @@
 		AF4F860429237F1700FE090B /* SwiftyProtein */ = {
 			isa = PBXGroup;
 			children = (
-				AF4F860529237F1700FE090B /* SwiftyProteinApp.swift */,
-				AF565399292CD31800B1328D /* Views */,
 				AF4F860929237F1F00FE090B /* Assets.xcassets */,
 				AF08C723292F66BF0001D010 /* Launch Screen.storyboard */,
+				AF4F860529237F1700FE090B /* SwiftyProteinApp.swift */,
 				AF4F860B29237F1F00FE090B /* Preview Content */,
+				AF3216D72933E31D0061AD9F /* Models */,
+				AF3216D22933E1A90061AD9F /* Resources */,
+				AF565399292CD31800B1328D /* Views */,
 			);
 			path = SwiftyProtein;
 			sourceTree = "<group>";
@@ -77,9 +126,9 @@
 		AF565399292CD31800B1328D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AF4F860729237F1700FE090B /* LoginView.swift */,
-				AFC799B1293119F000ACABF7 /* ProteinListView.swift */,
-				AF22F00E2933B38500FAB542 /* AuthenticationButtonView.swift */,
+				AF3216D82934A9CC0061AD9F /* Login */,
+				AF3216D92934A9F20061AD9F /* ProteinList */,
+				AF3216DC2934E12A0061AD9F /* Protein */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -145,6 +194,7 @@
 				AF08C724292F66BF0001D010 /* Launch Screen.storyboard in Resources */,
 				AF4F860D29237F1F00FE090B /* Preview Assets.xcassets in Resources */,
 				AF4F860A29237F1F00FE090B /* Assets.xcassets in Resources */,
+				AF3216D42933E2600061AD9F /* ligands.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +205,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF3216D62933E3140061AD9F /* Legand.swift in Sources */,
+				AF3216DB2934E11D0061AD9F /* LegandView.swift in Sources */,
 				AF22F00F2933B38600FAB542 /* AuthenticationButtonView.swift in Sources */,
 				AF4F860829237F1700FE090B /* LoginView.swift in Sources */,
 				AFC799B2293119F000ACABF7 /* ProteinListView.swift in Sources */,

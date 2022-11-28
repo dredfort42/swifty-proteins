@@ -9,9 +9,9 @@ import SwiftUI
 import LocalAuthentication
 
 struct LoginView: View {
-
+	
 	let context = LAContext()
-
+	
 	@State private var successAuth = false
 	@State private var buttonTapped = false
 	
@@ -35,13 +35,13 @@ struct LoginView: View {
 						.edgesIgnoringSafeArea(.all)
 						.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 				)
-			
 		}
 	}
-
+	
 	func checkAuthWithBiometrics() -> Bool {
+		
 		var error: NSError?
-
+		
 		if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
 			return true
 		}
@@ -50,18 +50,21 @@ struct LoginView: View {
 	}
 	
 	func authentication() {
+		
 		let reason = "We need to unlock your data."
 		
 		context.evaluatePolicy(
 			.deviceOwnerAuthenticationWithBiometrics,
-			localizedReason: reason) { success, authenticationError in
-				if success {
-					print("BIOMETRICS SUCCESS")
-					successAuth.toggle()
-				} else {
-					print("BIOMETRICS FAULSE")
-				}
+			localizedReason: reason
+		) {
+			success, authenticationError in
+			if success {
+				print("BIOMETRICS SUCCESS")
+				successAuth.toggle()
+			} else {
+				print("BIOMETRICS FAULSE")
 			}
+		}
 	}
 }
 
