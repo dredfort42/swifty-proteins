@@ -69,12 +69,12 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		AF3216D92934A9F20061AD9F /* ProteinList */ = {
+		AF3216D92934A9F20061AD9F /* ProteinsList */ = {
 			isa = PBXGroup;
 			children = (
 				AFC799B1293119F000ACABF7 /* ProteinListView.swift */,
 			);
-			path = ProteinList;
+			path = ProteinsList;
 			sourceTree = "<group>";
 		};
 		AF3216DC2934E12A0061AD9F /* Protein */ = {
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				AF3216D82934A9CC0061AD9F /* Login */,
-				AF3216D92934A9F20061AD9F /* ProteinList */,
+				AF3216D92934A9F20061AD9F /* ProteinsList */,
 				AF3216DC2934E12A0061AD9F /* Protein */,
 			);
 			path = Views;

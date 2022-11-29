@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct LegandView: View {
-	var legand: Legand
+	var protein: Protein
     var body: some View {
-		Text(legand.id.description + " - " + legand.name)
+		Text(protein.id.description + " - " + protein.name)
     }
 }
 
 struct LegandView_Previews: PreviewProvider {
     static var previews: some View {
-        LegandView(legand: legands[0])
+        LegandView(protein: proteins[0])
     }
 }

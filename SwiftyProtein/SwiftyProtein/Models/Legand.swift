@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Legand: Hashable, Codable {
+struct Protein: Hashable, Codable {
 	var id: Int
 	var name: String
 }
 
-var legands: [Legand] = loadLegands()
+var proteins: [Protein] = loadProteins()
 
-func loadLegands() -> [Legand] {
+func loadProteins() -> [Protein] {
 	let filename: String = "ligands.txt"
 	let data: String
 
@@ -29,11 +29,10 @@ func loadLegands() -> [Legand] {
 		fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
 	}
 
-	let legandNames: [String] = data.components(separatedBy: .newlines).filter({$0 != ""})
-	var tmpLegands: [Legand] = []
-	for i in 0..<legandNames.count {
-		tmpLegands.append(Legand(id: i, name: legandNames[i]))
+	let proteinNames: [String] = data.components(separatedBy: .newlines).filter({$0 != ""})
+	var tmpProteins: [Protein] = []
+	for i in 0..<proteinNames.count {
+		tmpProteins.append(Protein(id: i, name: proteinNames[i]))
 	}
-	print(tmpLegands)
-	return tmpLegands.sorted(by: {$0.name < $1.name})
+	return tmpProteins.sorted(by: {$0.name < $1.name})
 }
