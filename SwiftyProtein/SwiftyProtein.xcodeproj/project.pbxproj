@@ -17,6 +17,7 @@
 		AF4F860A29237F1F00FE090B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4F860929237F1F00FE090B /* Assets.xcassets */; };
 		AF4F860D29237F1F00FE090B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4F860C29237F1F00FE090B /* Preview Assets.xcassets */; };
 		AFC799B2293119F000ACABF7 /* ProteinListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC799B1293119F000ACABF7 /* ProteinListView.swift */; };
+		AFCE27D92938AF31003A5710 /* ProteinCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE27D82938AF31003A5710 /* ProteinCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		AF4F860929237F1F00FE090B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF4F860C29237F1F00FE090B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AFC799B1293119F000ACABF7 /* ProteinListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinListView.swift; sourceTree = "<group>"; };
+		AFCE27D82938AF31003A5710 /* ProteinCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				AFC799B1293119F000ACABF7 /* ProteinListView.swift */,
+				AFCE27D82938AF31003A5710 /* ProteinCardView.swift */,
 			);
 			path = ProteinsList;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				AF3216D62933E3140061AD9F /* Legand.swift in Sources */,
 				AF3216DB2934E11D0061AD9F /* LegandView.swift in Sources */,
 				AF22F00F2933B38600FAB542 /* AuthenticationButtonView.swift in Sources */,
+				AFCE27D92938AF31003A5710 /* ProteinCardView.swift in Sources */,
 				AF4F860829237F1700FE090B /* LoginView.swift in Sources */,
 				AFC799B2293119F000ACABF7 /* ProteinListView.swift in Sources */,
 				AF4F860629237F1700FE090B /* SwiftyProteinApp.swift in Sources */,
