@@ -13,7 +13,7 @@ struct ProteinCardView: View {
 	
 	var body: some View {
 		NavigationLink {
-			LegandView(protein: protein)
+			LigandView(protein: protein)
 		} label: {
 			ZStack {
 				Circle()
