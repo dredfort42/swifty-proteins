@@ -19,7 +19,12 @@ struct LoginView: View {
 		if !checkAuthWithBiometrics() || successAuth {
 			ProteinListView()
 		} else {
-			AuthenticationButtonView()
+			Image(systemName: "faceid")
+				.font(.system(size: 60, weight: .thin))
+				.foregroundColor(Color(white: 0.2))
+				.background(
+					SpinningWheelView(wheelSize: 120.0, wheelAnimation: true)
+				)
 				.scaleEffect(buttonTapped ? 0.95 : 1)
 				.onTapGesture() {
 					buttonTapped.toggle()

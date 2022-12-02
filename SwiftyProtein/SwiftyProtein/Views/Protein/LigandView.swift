@@ -19,3 +19,6 @@ struct LigandView_Previews: PreviewProvider {
         LigandView(protein: proteins[0])
     }
 }
+
+
+//https://download.rcsb.org/batch/ccd/001_model.sdf
