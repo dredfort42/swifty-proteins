@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ProteinView: View {
 	var protein: Protein
-
-    var body: some View {
+	
+	var body: some View {
 		LigandView(protein: protein)
-    }
+	}
 }
 
 struct ProteinView_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		ProteinView(protein: ProteinsList().proteins[0])
-    }
+	}
 }

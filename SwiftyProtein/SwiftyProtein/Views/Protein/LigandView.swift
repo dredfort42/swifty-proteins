@@ -22,10 +22,13 @@ struct LigandView: View {
 	private var content: some View {
 		Group {
 			if ligandData.ligandData != nil {
-				Text(ligandData.ligandData!)
+				NavigationView {
+					Text(ligandData.ligandData!)
+				}
+				.navigationTitle(ligandData.proteinFormula!)
 			} else {
 				Image(systemName: "hourglass")
-					.font(.system(size: 50, weight: .thin))
+					.font(.system(size: 42, weight: .thin))
 					.foregroundColor(Color(white: 0.50))
 					.background(
 						SpinningWheelView(wheelSize: 120.0, wheelAnimation: true)

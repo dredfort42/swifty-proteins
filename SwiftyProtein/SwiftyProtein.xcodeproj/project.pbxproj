@@ -131,10 +131,10 @@
 		AF565399292CD31800B1328D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AFCE27DB29391A8D003A5710 /* SpinningWheelView.swift */,
 				AF3216D82934A9CC0061AD9F /* Login */,
 				AF3216D92934A9F20061AD9F /* ProteinsList */,
 				AF3216DC2934E12A0061AD9F /* Protein */,
-				AFCE27DB29391A8D003A5710 /* SpinningWheelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
