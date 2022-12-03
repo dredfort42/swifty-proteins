@@ -9,7 +9,6 @@ import SwiftUI
 import LocalAuthentication
 
 struct LoginView: View {
-	
 	let context = LAContext()
 	
 	@State private var successAuth = false
@@ -17,11 +16,11 @@ struct LoginView: View {
 	
 	var body: some View {
 		if !checkAuthWithBiometrics() || successAuth {
-			ProteinListView()
+			ProteinsListView()
 		} else {
 			Image(systemName: "faceid")
-				.font(.system(size: 60, weight: .thin))
-				.foregroundColor(Color(white: 0.2))
+				.font(.system(size: 50, weight: .thin))
+				.foregroundColor(Color(white: 0.25))
 				.background(
 					SpinningWheelView(wheelSize: 120.0, wheelAnimation: true)
 				)
@@ -44,7 +43,6 @@ struct LoginView: View {
 	}
 	
 	func checkAuthWithBiometrics() -> Bool {
-		
 		var error: NSError?
 		
 		if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
@@ -55,14 +53,12 @@ struct LoginView: View {
 	}
 	
 	func authentication() {
-		
 		let reason = "We need to unlock your data."
 		
 		context.evaluatePolicy(
 			.deviceOwnerAuthenticationWithBiometrics,
 			localizedReason: reason
-		) {
-			success, authenticationError in
+		) { success, authenticationError in
 			if success {
 				print("BIOMETRICS SUCCESS")
 				successAuth.toggle()

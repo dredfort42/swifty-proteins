@@ -1,5 +1,5 @@
 //
-//  ProteinListView.swift
+//  ProteinsListView.swift
 //  SwiftyProtein
 //
 //  Created by Dmitry Novikov on 25.11.2022.
@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-struct ProteinListView: View {
-
+struct ProteinsListView: View {
 	@State private var showProteinsList: Bool = false
 	@State private var searchText: String = ""
 	@State private var gridLayout: [GridItem] = [GridItem(.adaptive(minimum: 100))]
+
+	private let proteins = ProteinsList().proteins
 
 	var body: some View {
 		NavigationStack {
@@ -20,7 +21,7 @@ struct ProteinListView: View {
 					LazyHGrid(rows: gridLayout, alignment: .center, spacing: 10) {
 						ForEach(filteredProteins, id: \.id) { protein in
 							NavigationLink {
-								LigandView(protein: protein)
+								ProteinView(protein: protein)
 							} label: {
 								ZStack {
 									SpinningWheelView(wheelSize: 75, wheelStartPosition: Double(protein.id % 15 * 24))
@@ -62,6 +63,6 @@ struct ProteinListView: View {
 
 struct ProteinListView_Previews: PreviewProvider {
 	static var previews: some View {
-		ProteinListView()
+		ProteinsListView()
 	}
 }

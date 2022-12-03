@@ -9,28 +9,32 @@
 /* Begin PBXBuildFile section */
 		AF08C724292F66BF0001D010 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF08C723292F66BF0001D010 /* Launch Screen.storyboard */; };
 		AF3216D42933E2600061AD9F /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF3216D32933E2600061AD9F /* ligands.txt */; };
-		AF3216D62933E3140061AD9F /* Legand.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3216D52933E3140061AD9F /* Legand.swift */; };
+		AF3216D62933E3140061AD9F /* ProteinsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3216D52933E3140061AD9F /* ProteinsList.swift */; };
 		AF3216DB2934E11D0061AD9F /* LigandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3216DA2934E11D0061AD9F /* LigandView.swift */; };
 		AF4F860629237F1700FE090B /* SwiftyProteinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F860529237F1700FE090B /* SwiftyProteinApp.swift */; };
 		AF4F860829237F1700FE090B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F860729237F1700FE090B /* LoginView.swift */; };
 		AF4F860A29237F1F00FE090B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4F860929237F1F00FE090B /* Assets.xcassets */; };
 		AF4F860D29237F1F00FE090B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4F860C29237F1F00FE090B /* Preview Assets.xcassets */; };
-		AFC799B2293119F000ACABF7 /* ProteinListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC799B1293119F000ACABF7 /* ProteinListView.swift */; };
+		AFC799B2293119F000ACABF7 /* ProteinsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC799B1293119F000ACABF7 /* ProteinsListView.swift */; };
 		AFCE27DC29391A8D003A5710 /* SpinningWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE27DB29391A8D003A5710 /* SpinningWheelView.swift */; };
+		AFCE27DE293B4716003A5710 /* LigandLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE27DD293B4716003A5710 /* LigandLoader.swift */; };
+		AFCE27E2293B48FB003A5710 /* ProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE27E1293B48FB003A5710 /* ProteinView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF08C723292F66BF0001D010 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		AF3216D32933E2600061AD9F /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ligands.txt; path = ../../../ligands.txt; sourceTree = "<group>"; };
-		AF3216D52933E3140061AD9F /* Legand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legand.swift; sourceTree = "<group>"; };
+		AF3216D52933E3140061AD9F /* ProteinsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinsList.swift; sourceTree = "<group>"; };
 		AF3216DA2934E11D0061AD9F /* LigandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandView.swift; sourceTree = "<group>"; };
 		AF4F860229237F1700FE090B /* SwiftyProtein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProtein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4F860529237F1700FE090B /* SwiftyProteinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyProteinApp.swift; sourceTree = "<group>"; };
 		AF4F860729237F1700FE090B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AF4F860929237F1F00FE090B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF4F860C29237F1F00FE090B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AFC799B1293119F000ACABF7 /* ProteinListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinListView.swift; sourceTree = "<group>"; };
+		AFC799B1293119F000ACABF7 /* ProteinsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinsListView.swift; sourceTree = "<group>"; };
 		AFCE27DB29391A8D003A5710 /* SpinningWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinningWheelView.swift; sourceTree = "<group>"; };
+		AFCE27DD293B4716003A5710 /* LigandLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandLoader.swift; sourceTree = "<group>"; };
+		AFCE27E1293B48FB003A5710 /* ProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,8 @@
 		AF3216D72933E31D0061AD9F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AF3216D52933E3140061AD9F /* Legand.swift */,
+				AF3216D52933E3140061AD9F /* ProteinsList.swift */,
+				AFCE27DD293B4716003A5710 /* LigandLoader.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -71,7 +76,7 @@
 		AF3216D92934A9F20061AD9F /* ProteinsList */ = {
 			isa = PBXGroup;
 			children = (
-				AFC799B1293119F000ACABF7 /* ProteinListView.swift */,
+				AFC799B1293119F000ACABF7 /* ProteinsListView.swift */,
 			);
 			path = ProteinsList;
 			sourceTree = "<group>";
@@ -80,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				AF3216DA2934E11D0061AD9F /* LigandView.swift */,
+				AFCE27E1293B48FB003A5710 /* ProteinView.swift */,
 			);
 			path = Protein;
 			sourceTree = "<group>";
@@ -205,11 +211,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFCE27E2293B48FB003A5710 /* ProteinView.swift in Sources */,
 				AFCE27DC29391A8D003A5710 /* SpinningWheelView.swift in Sources */,
-				AF3216D62933E3140061AD9F /* Legand.swift in Sources */,
+				AF3216D62933E3140061AD9F /* ProteinsList.swift in Sources */,
 				AF3216DB2934E11D0061AD9F /* LigandView.swift in Sources */,
 				AF4F860829237F1700FE090B /* LoginView.swift in Sources */,
-				AFC799B2293119F000ACABF7 /* ProteinListView.swift in Sources */,
+				AFC799B2293119F000ACABF7 /* ProteinsListView.swift in Sources */,
+				AFCE27DE293B4716003A5710 /* LigandLoader.swift in Sources */,
 				AF4F860629237F1700FE090B /* SwiftyProteinApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

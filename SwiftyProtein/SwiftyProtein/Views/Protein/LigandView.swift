@@ -8,17 +8,36 @@
 import SwiftUI
 
 struct LigandView: View {
-	var protein: Protein
-    var body: some View {
-		Text(protein.id.description + " - " + protein.name)
-    }
+	@StateObject private var ligandData: LigandLoader
+
+	init(protein: Protein) {
+		_ligandData = StateObject(wrappedValue: LigandLoader(protein: protein))
+	}
+
+	var body: some View {
+		content
+			.onAppear(perform: ligandData.load)
+	}
+
+	private var content: some View {
+		Group {
+			if ligandData.ligandData != nil {
+				Text(ligandData.ligandData!)
+			} else {
+				Image(systemName: "hourglass")
+					.font(.system(size: 50, weight: .thin))
+					.foregroundColor(Color(white: 0.50))
+					.background(
+						SpinningWheelView(wheelSize: 120.0, wheelAnimation: true)
+					)
+			}
+		}
+	}
 }
 
 struct LigandView_Previews: PreviewProvider {
-    static var previews: some View {
-        LigandView(protein: proteins[0])
-    }
+	static var previews: some View {
+		LigandView(protein: ProteinsList().proteins[0])
+	}
 }
 
-
-//https://download.rcsb.org/batch/ccd/001_model.sdf
