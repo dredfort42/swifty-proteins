@@ -14,27 +14,32 @@ struct SpinningWheelView: View {
 
 	@State private var wheelRotating: Double = 0.0
 
+	private let backgroundColor: UIColor = ([.red, .orange, .yellow, .green, .blue, .purple, .magenta, .white, .black].randomElement() ?? .white)
+
 	var body: some View {
 		let shadowShift: CGFloat = wheelSize / 10
 		let shadowRadius: CGFloat = shadowShift / 10
-
-		Circle()
-			.fill(Color(white: 1.0))
-			.frame(width: wheelSize, height: wheelSize)
-			.shadow(color: .cyan.opacity(0.1), radius: shadowRadius, x: 0, y: -shadowShift)
-			.shadow(color: .yellow.opacity(0.1), radius: shadowRadius, x: 0, y: shadowShift)
-			.shadow(color: .purple.opacity(0.1), radius: shadowRadius, x: shadowShift, y: 0)
-			.shadow(color: .green.opacity(0.1), radius: shadowRadius, x: -shadowShift, y: 0)
-			.rotationEffect(.degrees(wheelAnimation ? wheelRotating : wheelStartPosition))
-			.padding(10)
-			.onAppear {
-				if wheelAnimation {
-					withAnimation(.linear(duration: 1)
-						.speed(0.1).repeatForever(autoreverses: false)) {
-							wheelRotating = 360.0
-						}
-				}
+		ZStack {
+			Circle()
+				.fill(.white)
+				.shadow(color: .cyan.opacity(0.15), radius: shadowRadius, x: 0, y: -shadowShift)
+				.shadow(color: .yellow.opacity(0.15), radius: shadowRadius, x: 0, y: shadowShift)
+				.shadow(color: .purple.opacity(0.15), radius: shadowRadius, x: shadowShift, y: 0)
+				.shadow(color: .green.opacity(0.15), radius: shadowRadius, x: -shadowShift, y: 0)
+				.rotationEffect(.degrees(wheelAnimation ? wheelRotating : wheelStartPosition))
+			Circle()
+				.fill(Color(backgroundColor.withAlphaComponent(0.025)))
+		}
+		.frame(width: wheelSize, height: wheelSize)
+		.padding(10)
+		.onAppear {
+			if wheelAnimation {
+				withAnimation(.linear(duration: 1)
+					.speed(0.1).repeatForever(autoreverses: false)) {
+						wheelRotating = 360.0
+					}
 			}
+		}
 	}
 }
 

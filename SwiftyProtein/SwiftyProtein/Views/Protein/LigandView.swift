@@ -21,9 +21,10 @@ struct LigandView: View {
 
 	private var content: some View {
 		Group {
-			if ligandData.ligandData != nil {
+			if ligandData.proteinFormula != nil {
 				NavigationView {
-					Text(ligandData.ligandData!)
+					Text("XXXxxxXXXxxxXXX")
+					Text(ligandData.proteinFormula!)
 				}
 				.navigationTitle(ligandData.proteinFormula!)
 			} else {
