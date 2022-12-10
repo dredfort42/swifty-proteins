@@ -12,12 +12,14 @@ class LigandLoader: ObservableObject {
 	@Published var atomBlock: [Int : [String]] = [:]
 	@Published var bondBlock: [Int : [String]] = [:]
 	@Published var proteinFormula: String?
+	@Published var ligandLoadingError: Bool
 
 	private let url: URL
 	private var cancellabel: AnyCancellable?
 	private var ligandData: String?
 
 	init(protein: Protein) {
+		ligandLoadingError = false
 		self.url = URL(string: "https://files.rcsb.org/ligands/view/\(protein.name.uppercased())_model.sdf")!
 	}
 
@@ -30,34 +32,39 @@ class LigandLoader: ObservableObject {
 			.map { String(data: $0.data, encoding: .utf8) }
 			.replaceError(with: nil)
 			.receive(on: DispatchQueue.main)
-			.sink { [self] in
-				ligandData = $0
-				getLigandData()
-			}
+			.sink(receiveCompletion: { (suscriberCompletion) in
+				switch suscriberCompletion {
+					case .finished:
+						self.getLigandData()
+						if self.proteinFormula == nil {
+							self.ligandLoadingError = true
+						}
+						break
+					case .failure(let error):
+						self.ligandLoadingError = true
+						print("Ligand loading error: \(error.localizedDescription)")
+				}
+			}, receiveValue: { [weak self] (rawData) in
+				self?.ligandData = rawData
+			})
 	}
 
 	func getLigandData(){
-		let lines = ligandData?.components(separatedBy: .newlines)
-
-		var i = 0
+		let lines = ligandData!.components(separatedBy: .newlines)
 		var ab = 0
 		var	bb = 0
-		for line in lines! {
-			if line.lengthOfBytes(using: .utf8) == 69 {
-				atomBlock[ab] = line.components(separatedBy: .whitespaces).filter({ $0 != "" })
+		
+		for i in 0..<lines.count {
+			if lines[i].lengthOfBytes(using: .utf8) == 69 {
+				atomBlock[ab] = lines[i].components(separatedBy: .whitespaces).filter({ $0 != "" })
 				ab += 1
-			} else if line.lengthOfBytes(using: .utf8) == 21 {
-				bondBlock[bb] = line.components(separatedBy: .whitespaces).filter({ $0 != "" })
+			} else if lines[i].lengthOfBytes(using: .utf8) == 21 {
+				bondBlock[bb] = lines[i].components(separatedBy: .whitespaces).filter({ $0 != "" })
 				bb += 1
-			} else if line == "> <FORMULA>" {
-				proteinFormula = lines![i + 1]
+			} else if lines[i] == "> <FORMULA>" {
+				proteinFormula = lines[i + 1]
 				break
 			}
-			i += 1
 		}
-		print("----------")
-		print(atomBlock)
-		print("----------")
-		print(bondBlock)
 	}
 }

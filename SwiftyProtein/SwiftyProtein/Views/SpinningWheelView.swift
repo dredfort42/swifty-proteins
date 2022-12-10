@@ -13,8 +13,7 @@ struct SpinningWheelView: View {
 	var wheelAnimation: Bool = false
 
 	@State private var wheelRotating: Double = 0.0
-
-	private let backgroundColor: UIColor = ([.red, .orange, .yellow, .green, .blue, .purple, .magenta, .white, .black].randomElement() ?? .white)
+	@State private var backgroundColor: UIColor = ([.red, .orange, .yellow, .green, .blue, .purple, .magenta, .white, .black].randomElement() ?? .white)
 
 	var body: some View {
 		let shadowShift: CGFloat = wheelSize / 10
@@ -28,16 +27,26 @@ struct SpinningWheelView: View {
 				.shadow(color: .green.opacity(0.15), radius: shadowRadius, x: -shadowShift, y: 0)
 				.rotationEffect(.degrees(wheelAnimation ? wheelRotating : wheelStartPosition))
 			Circle()
-				.fill(Color(backgroundColor.withAlphaComponent(0.025)))
+				.fill(Color(backgroundColor.withAlphaComponent(0.05)))
 		}
 		.frame(width: wheelSize, height: wheelSize)
 		.padding(10)
 		.onAppear {
 			if wheelAnimation {
-				withAnimation(.linear(duration: 1)
-					.speed(0.1).repeatForever(autoreverses: false)) {
-						wheelRotating = 360.0
-					}
+				withAnimation(
+					.linear(duration: 1)
+					.speed(0.1)
+					.repeatForever(autoreverses: false)
+				) {
+					wheelRotating = 360.0
+				}
+				withAnimation(
+					.easeInOut(duration: 1)
+					.speed(0.25)
+					.repeatForever(autoreverses: true)
+				) {
+					backgroundColor = ([.red, .orange, .yellow, .green, .blue, .purple, .magenta, .white, .black].randomElement() ?? .white)
+				}
 			}
 		}
 	}

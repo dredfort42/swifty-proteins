@@ -22,7 +22,7 @@ struct ProteinsListView: View {
 							ProteinView(protein: protein)
 						} label: {
 							ZStack {
-								SpinningWheelView(wheelSize: 75, wheelStartPosition: Double(protein.id % 15 * 24))
+								SpinningWheelView(wheelSize: 75, wheelStartPosition: Double(arc4random_uniform(360)))
 								Text(protein.name)
 									.font(.system(size: 16, weight: .light))
 									.foregroundColor(Color(white: 0.2))
