@@ -19,7 +19,7 @@ struct ProteinsListView: View {
 				LazyHGrid(rows: gridLayout, alignment: .center, spacing: 10) {
 					ForEach(filteredProteins, id: \.id) { protein in
 						NavigationLink {
-							ProteinView(protein: protein)
+							LigandView(protein: protein)
 						} label: {
 							ZStack {
 								SpinningWheelView(wheelSize: 75, wheelStartPosition: Double(arc4random_uniform(360)))

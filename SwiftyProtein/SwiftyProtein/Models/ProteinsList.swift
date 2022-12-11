@@ -19,7 +19,7 @@ class ProteinsList {
 		proteins = loadProteins()
 	}
 
-	func loadProteins() -> [Protein] {
+	private func loadProteins() -> [Protein] {
 		let filename: String = "ligands.txt"
 		let data: String
 

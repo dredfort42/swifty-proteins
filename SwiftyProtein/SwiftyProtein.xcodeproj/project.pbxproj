@@ -18,9 +18,9 @@
 		AFC799B2293119F000ACABF7 /* ProteinsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC799B1293119F000ACABF7 /* ProteinsListView.swift */; };
 		AFCE27DC29391A8D003A5710 /* SpinningWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE27DB29391A8D003A5710 /* SpinningWheelView.swift */; };
 		AFCE27DE293B4716003A5710 /* LigandLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE27DD293B4716003A5710 /* LigandLoader.swift */; };
-		AFCE27E2293B48FB003A5710 /* ProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE27E1293B48FB003A5710 /* ProteinView.swift */; };
 		AFCE27E829424D82003A5710 /* CPK.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE27E729424D82003A5710 /* CPK.swift */; };
 		AFCE27EA294369B1003A5710 /* Ligand.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE27E9294369B1003A5710 /* Ligand.swift */; };
+		AFCE27F02944A6DC003A5710 /* SceneKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE27EF2944A6DC003A5710 /* SceneKitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +36,9 @@
 		AFC799B1293119F000ACABF7 /* ProteinsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinsListView.swift; sourceTree = "<group>"; };
 		AFCE27DB29391A8D003A5710 /* SpinningWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinningWheelView.swift; sourceTree = "<group>"; };
 		AFCE27DD293B4716003A5710 /* LigandLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandLoader.swift; sourceTree = "<group>"; };
-		AFCE27E1293B48FB003A5710 /* ProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinView.swift; sourceTree = "<group>"; };
 		AFCE27E729424D82003A5710 /* CPK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPK.swift; sourceTree = "<group>"; };
 		AFCE27E9294369B1003A5710 /* Ligand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ligand.swift; sourceTree = "<group>"; };
+		AFCE27EF2944A6DC003A5710 /* SceneKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				AF3216DA2934E11D0061AD9F /* LigandView.swift */,
-				AFCE27E1293B48FB003A5710 /* ProteinView.swift */,
+				AFCE27EF2944A6DC003A5710 /* SceneKitView.swift */,
 			);
 			path = Protein;
 			sourceTree = "<group>";
@@ -217,10 +217,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFCE27E2293B48FB003A5710 /* ProteinView.swift in Sources */,
 				AFCE27DC29391A8D003A5710 /* SpinningWheelView.swift in Sources */,
 				AFCE27E829424D82003A5710 /* CPK.swift in Sources */,
 				AFCE27EA294369B1003A5710 /* Ligand.swift in Sources */,
+				AFCE27F02944A6DC003A5710 /* SceneKitView.swift in Sources */,
 				AF3216D62933E3140061AD9F /* ProteinsList.swift in Sources */,
 				AF3216DB2934E11D0061AD9F /* LigandView.swift in Sources */,
 				AF4F860829237F1700FE090B /* LoginView.swift in Sources */,

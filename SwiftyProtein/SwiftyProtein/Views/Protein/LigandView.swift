@@ -10,41 +10,37 @@ import SceneKit
 
 struct LigandView: View {
 	@Environment(\.dismiss) var dismiss
-
-	@StateObject private var ligandData: LigandLoader
+	
 	private let protein: Protein
-
+	
+	@StateObject private var ligandData: LigandLoader
+	@State var pointer = UnsafeMutablePointer<SCNNode>.allocate(capacity: 1)
+	@State var showAlert: Bool = false
+	@State var selectedAtom: String = ""
+	
 	init(protein: Protein) {
 		_ligandData = StateObject(wrappedValue: LigandLoader(protein: protein))
 		self.protein = protein
+		UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .darkGray
 	}
-
-//	var cameraNode: SCNNode? {
-//		let cameraNode = SCNNode()
-//		cameraNode.camera = SCNCamera()
-//		cameraNode.position = SCNVector3(x: 0, y: 0, z: 2)
-//		return cameraNode
-//	}
-
-
-
+	
 	private var content: some View {
 		Group {
 			if ligandData.proteinFormula != nil && ligandData.ligandLoadingError == false {
-				NavigationView {
-//					Text(ligandData.proteinFormula!)
-
-					SceneView(
+				VStack {
+					SceneKitView(
 						scene: Ligand(atoms: ligandData.atomBlock, bonds: ligandData.bondBlock).scene,
-//						pointOfView: cameraNode,
-						options: [
-							.allowsCameraControl,
-							.autoenablesDefaultLighting,
-							.temporalAntialiasingEnabled
-						]
+						pointer: pointer,
+						showAlert: $showAlert,
+						selectedAtom: $selectedAtom
 					)
+					.alert("Selected atom: " + selectedAtom, isPresented: $showAlert) {
+						Button("OK", role: .cancel) { showAlert.toggle() }
+							.foregroundColor(.black)
+					}
+					Text(ligandData.proteinFormula!)
+						.font(.system(size: 14, weight: .semibold, design: .rounded))
 				}
-				.navigationTitle(ligandData.proteinFormula!)
 			} else {
 				Image(systemName: "hourglass")
 					.font(.system(size: 42, weight: .thin))
@@ -64,12 +60,35 @@ struct LigandView: View {
 			)
 		}
 	}
-
+	
 	var body: some View {
-		content
-			.onAppear {
-				ligandData.load()
-			}
+		NavigationView {
+			content
+				.onAppear {
+					ligandData.load()
+				}
+		}
+		.navigationTitle(protein.name)
+		.navigationBarItems(trailing: Button(action: shareProtein) {
+			Image(systemName: "square.and.arrow.up")
+		})
+	}
+	
+	func shareProtein() {
+		DispatchQueue.main.async {
+			let render = SCNRenderer(device: MTLCreateSystemDefaultDevice())
+			render.scene = Ligand(atoms: ligandData.atomBlock, bonds: ligandData.bondBlock).scene
+			render.isTemporalAntialiasingEnabled = true
+			render.isJitteringEnabled = true
+			render.autoenablesDefaultLighting = true
+
+			let size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+			let image = render.snapshot(atTime: 0, with: size, antialiasingMode: .multisampling4X)
+			let title = "Take a look at this ligand: \(ligandData.proteinFormula ?? "")"
+			let activityVC = UIActivityViewController(activityItems: [title, image], applicationActivities: [])
+			
+			UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: true)
+		}
 	}
 }
 

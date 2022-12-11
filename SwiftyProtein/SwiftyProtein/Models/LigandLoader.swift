@@ -49,7 +49,7 @@ class LigandLoader: ObservableObject {
 			})
 	}
 
-	func getLigandData(){
+	private func getLigandData(){
 		let lines = ligandData!.components(separatedBy: .newlines)
 		var ab = 0
 		var	bb = 0
