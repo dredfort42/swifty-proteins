@@ -35,11 +35,14 @@ class LigandLoader: ObservableObject {
 			.sink(receiveCompletion: { (suscriberCompletion) in
 				switch suscriberCompletion {
 					case .finished:
-						self.getLigandData()
-						if self.proteinFormula == nil {
+						if self.ligandData == nil {
 							self.ligandLoadingError = true
+						} else {
+							self.getLigandData()
+							if self.proteinFormula == nil {
+								self.ligandLoadingError = true
+							}
 						}
-						break
 					case .failure(let error):
 						self.ligandLoadingError = true
 						print("Ligand loading error: \(error.localizedDescription)")
